@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'college',
+    'registration',
+    
 ]
 
 MIDDLEWARE = [
@@ -115,7 +117,23 @@ USE_L10N = True
 USE_TZ = True
 
 
+STATIC_URL = '/static/'
+
+ACCOUNT_ACTIVATION_DAYS = 3
+
+EMAIL_HOST= 'smtp.gmail.com'
+EMAIL_PORT= 587
+EMAIL_USER_TLS= True
+
+EMAIL_HOST_USER= 'pranav101sharma@gmail.com'
+EMAIL_HOST_PASSWORD= 'pranav101'  
+
+LOGIN_REDIRECT_URL = "/"
+
+PROJECT_ROOT= os.path.realpath(os.path.dirname(__file__))
+MEDIA_ROOT = PROJECT_ROOT + "/static"
+MEDIA_URL = "/media/"
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+
