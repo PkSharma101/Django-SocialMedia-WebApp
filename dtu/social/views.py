@@ -29,14 +29,10 @@ class HomeView(TemplateView):
             obList = PostLike.objects.filter(post = p1)
             p1.likedno = obList.count()
         context["mypost_list"] = postList
-        return context;
+        return context
 
 
-class AboutView(TemplateView):
-    template_name = "social/about.html"
 
-class ContactView(TemplateView):
-    template_name = "social/contact.html"
 
 def follow(req, pk):
     user = MyProfile.objects.get(pk=pk)
@@ -82,7 +78,7 @@ class MyPostListView(ListView):
         si = self.request.GET.get("si")
         if si == None:
             si = ""
-        return MyPost.objects.filter(Q(uploaded_by = self.request.user.myprofile)).filter(Q(subject__icontains = si) | Q(msg__icontains = si)).order_by("-id");
+        return MyPost.objects.filter(Q(uploaded_by = self.request.user.myprofile)).filter(Q(subject__icontains = si) | Q(msg__icontains = si)).order_by("-id")
  
 @method_decorator(login_required, name="dispatch")    
 class MyPostDetailView(DetailView):
@@ -99,7 +95,7 @@ class MyProfileListView(ListView):
         si = self.request.GET.get("si")
         if si == None:
             si = ""
-        profList = MyProfile.objects.filter(Q(name__icontains = si) | Q(address__icontains = si) | Q(gender__icontains = si) | Q(status__icontains = si)).order_by("-id");
+        profList = MyProfile.objects.filter(Q(name__icontains = si) | Q(address__icontains = si) | Q(gender__icontains = si) | Q(status__icontains = si)).order_by("-id")
         for p1 in profList:
             p1.followed = False
             ob = FollowUser.objects.filter(profile = p1,followed_by=self.request.user.myprofile)
@@ -112,32 +108,4 @@ class MyProfileDetailView(DetailView):
     model = MyProfile
 
  
-# 
-# @method_decorator(login_required, name="dispatch")    
-# class ProfileUpdateView(UpdateView):
-#     model = Profile
-#     fields = ["branch", "sem", "marks_10", "marks_12", "marks_aggr", "rn", "myimg", "myresume", "skills"]
-# 
-# 
-# @method_decorator(login_required, name="dispatch")    
-# class QuestionCreate(CreateView):
-#     model = Question
-#     fields = ["subject", "msg"]
-#     def form_valid(self, form):
-#         self.object = form.save()
-#         self.object.user = self.request.user
-#         self.object.save()
-#         return HttpResponseRedirect(self.get_success_url())
-#     
-# @method_decorator(login_required, name="dispatch")    
-# class MyList(TemplateView):
-#     template_name = "college/mylist.html"
-#     def get_context_data(self, **kwargs):
-#         context = TemplateView.get_context_data(self, **kwargs)
-#         context["notices"] = Notice.objects.order_by("-id")[:3]
-#         context["questions"] = Question.objects.order_by("-id")[:3]
-#         return context;
-# 
-# 
-#     
-#     
+
