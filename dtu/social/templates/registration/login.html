@@ -2,6 +2,27 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
+<style>
+	 .fancybox{
+           margin: 0 auto;
+          position: relative;
+           border: transparent;
+           border-radius: 5%;
+           text-align: center;
+           width: 35%;
+           background-color: rgba(0,0,0,0.25);
+           margin-top: 5%;
+		  padding-top: 30px;
+		  padding-bottom: 30px;
+	  }
+	  
+	  .btn{
+		border-radius: 20px;
+          padding: 5px 15px;
+	  }
+
+</style>
+
 <main class="p-5">
 <div class="row text-justify">
 	<div class="col">
@@ -9,12 +30,15 @@
 	<hr>
 	</div>
 </div>
-<form enctype="multipart/form-data" method="post">
-{% csrf_token %}
-{{form | crispy}}<br>
-<input class="btn btn-primary" type="submit" />
-<a class="btn btn-success" href="/accounts/register/">Register</a>
-<a class="btn btn-danger" href="/accounts/password/reset/">Reset Password</a>
-</form>
+<div class="fancybox">
+	<form enctype="multipart/form-data" method="post">
+		{% csrf_token %}
+		{{form | crispy}}<br>
+		<input class="btn btn-primary" type="submit" />
+		<a class="btn btn-success" href="/accounts/register/">Register</a>
+		<a class="btn btn-danger" href="/accounts/password/reset/">Reset Password</a>
+		</form>
+</div>
+
 </main>
 {% endblock %}
