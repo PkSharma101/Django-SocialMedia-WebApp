@@ -1,20 +1,27 @@
 @charset "ISO-8859-1";
 body{
-	background-image: url("/static/images/back.jpg");
+
 	background-size: cover;
-	height: 100vh;
+	height: 200vh;
 	background-position: left;
 	font-size: 1.2em;
+
+
+
+
+	background-image: url("/static/images/cover.jpg");
+
+
 
 }
 #myhead1 {
 	font-size: 70px;
 	color: #620000;
 	text-align: center;
-	text-shadow: 3px 3px 3px black;
+	text-shadow: 3px 3px 3px white;
 	font-family: 'Roboto Slab', sans-serif;
 	background-color: #fde3bd;
-	border-bottom: 2px solid #620000;
+	border-bottom: 2px solid white;
 	border-top: 2px solid #620000;
 
 }
@@ -30,6 +37,7 @@ body{
 }
 #myheader1{
 	height: 100px;
+	color: white;
 }
 #headfix{
 	position: relative;
@@ -39,31 +47,39 @@ body{
 }
 .navbar-brand{
 	font-size: 70px;
-	color: black;
-	
+	color: white;
+
 	font-family: 'Roboto Slab', sans-serif;
 	font-weight: bolder;
 }
 .navbar {
+
+
+	background: linear-gradient(to left, #0f0c29, #302b63, #24243e);
+
+
 	font-size: 20px;
-	color: black;
-	
+	color: white;
+
 	font-family: 'Roboto Slab', sans-serif;
 	font-weight: bolder;
 }
 .navbar-light .navbar-nav .nav-link{
-	color: black;
+	color: white;
 }
 @media(max-width: 766px){
 	.navbar-nav{
 		background-color: #feecde;
+		color: white;
 	}
 }
 
 .myhead2{
+	text-align: center;
+	margin-top: 2%;
 	font-size: 30px;
-	color: black;
-	
+	color: white;
+
 	font-family: 'Roboto Slab', sans-serif;
 }
 .myfooter .col-sm-6{
@@ -73,34 +89,55 @@ body{
 }
 
 .fancybox{
+	color: white;
 	margin: 0 auto;
    position: relative;
 	border: transparent;
 	border-radius: 5%;
 	text-align: center;
-	width: 35%;
-	background-color: rgba(0,0,0,0.2);
+
+	width: 30%;
+	height: auto;
 	margin-top: 5%;
-   padding-top: 40px;
-   padding-bottom: 40px;
+	padding: 20px 20px;
+	background: linear-gradient(to left, #0f0c29, #302b63, #24243e);
+
 }
 
+
+
 .fancybox1{
-	margin-top: 1%;
+	color: white;
+
    position: relative;
    margin: 0 auto;
 	border: transparent;
 	border-radius: 5%;
 	text-align: left;
-	width: 70%;
-	background-color: rgba(255,255,255,0.5);
-	
-   padding-top: 20px;
-   padding-left: 20px;
+	width: 50%;
+	background: linear-gradient(to left, #0f0c29, #302b63, #24243e);
+
+
+   padding-left: 30px;
+
+   margin-top: 5%;
+   padding-top: 30px;
    padding-bottom: 30px;
+
 }
 
 .btn{
  border-radius: 20px;
-   padding: 5px 15px;
+   padding: 10px 20px;
+   background-color: black;
+   border: none;
+}
+
+hr{
+
+	height: 3px;
+	background: linear-gradient(to left, #0f0c29, #302b63, #24243e);
+
+	margin-top:2%;
+	width: 40%;
 }
