@@ -58,7 +58,7 @@ def unlike(req, pk):
 @method_decorator(login_required, name="dispatch")    
 class MyProfileUpdateView(UpdateView):
     model = MyProfile
-    fields = ["name", "age", "address", "status", "gender", "phone_no", "description", "pic"]
+    fields = ["name", "age", "address", "status", "gender", "phone_no", "pic"]
 
 @method_decorator(login_required, name="dispatch")    
 class MyPostCreate(CreateView):

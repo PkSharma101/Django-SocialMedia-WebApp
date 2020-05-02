@@ -21,6 +21,8 @@ urlpatterns = [
     path('myprofile/<int:pk>', views.MyProfileDetailView.as_view()),
     path('myprofile/follow/<int:pk>', views.follow),
     path('myprofile/unfollow/<int:pk>', views.unfollow),
+    
+  
 
     
     path('', RedirectView.as_view(url="home/")),  

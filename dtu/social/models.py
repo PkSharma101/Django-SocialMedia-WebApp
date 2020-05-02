@@ -9,10 +9,9 @@ class MyProfile(models.Model):
     user = models.OneToOneField(to=User, on_delete=CASCADE)
     age = models.IntegerField(default=18, validators=[MinValueValidator(18)])
     address = models.TextField(null=True, blank=True)
-    status = models.CharField(max_length=20, default="single", choices=(("single","single"), ("married","married"), ("widow","widow"), ("seprated","seprated"), ("commited","commited")))
     gender = models.CharField(max_length=20, default="female", choices=(("male","male"), ("female","female")))
     phone_no = models.CharField(validators=[RegexValidator("^0?[5-9]{1}\d{9}$")], max_length=15, null=True, blank=True)
-    description = models.TextField(null=True, blank=True)
+    status = models.CharField(max_length=15 ,default="student", choices=(("student","student"), ("employee", "employee"), ("administration", "administration")))
     pic=models.ImageField(upload_to = "images\\", null=True)
     def __str__(self):
         return "%s" % self.user
@@ -50,3 +49,5 @@ class FollowUser(models.Model):
     followed_by = models.ForeignKey(to=MyProfile, on_delete=CASCADE, related_name="followed_by")
     def __str__(self):
         return "%s is followed by %s" % (self.profile, self.followed_by)
+
+

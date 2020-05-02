@@ -7,9 +7,9 @@ body{
 	font-size: 1.2em;
 
 
+   background-color: white;
 
-
-	background-image: url("/static/images/cover.jpg");
+	/* background-image: url("/static/images/cover.jpg");  */
 
 
 
@@ -54,11 +54,11 @@ body{
 }
 .navbar {
 
+    /*	background: linear-gradient(to left, #0f0c29, #302b63, #24243e);
+ */
+	background: linear-gradient(to right, #ec008c, #fc6767);
 
-	background: linear-gradient(to left, #0f0c29, #302b63, #24243e);
-
-
-	font-size: 20px;
+	font-size: 20px;   
 	color: white;
 
 	font-family: 'Roboto Slab', sans-serif;
@@ -78,7 +78,7 @@ body{
 	text-align: center;
 	margin-top: 2%;
 	font-size: 30px;
-	color: white;
+	color: black;
 
 	font-family: 'Roboto Slab', sans-serif;
 }
@@ -100,7 +100,8 @@ body{
 	height: auto;
 	margin-top: 5%;
 	padding: 20px 20px;
-	background: linear-gradient(to left, #0f0c29, #302b63, #24243e);
+/*	background: linear-gradient(to left, #0f0c29, #302b63, #24243e);  */
+	background: linear-gradient(to right, #ec008c, #fc6767);
 
 }
 
@@ -115,8 +116,28 @@ body{
 	border-radius: 5%;
 	text-align: left;
 	width: 50%;
-	background: linear-gradient(to left, #0f0c29, #302b63, #24243e);
+/*	background: linear-gradient(to left, #0f0c29, #302b63, #24243e); */
+	background: linear-gradient(to right, #ec008c, #fc6767);
 
+   padding-left: 30px;
+   
+   margin-top: 5%;
+   padding-top: 30px;
+   padding-bottom: 30px;
+
+}
+
+.fancybox2{
+	color: white;
+
+   position: relative;
+   margin: 0 auto;
+	border: transparent;
+	border-radius: 5%;
+	text-align: left;
+	width: auto;
+/*	background: linear-gradient(to left, #0f0c29, #302b63, #24243e); */
+	background: linear-gradient(to right, #ec008c, #fc6767);
 
    padding-left: 30px;
 
@@ -136,8 +157,11 @@ body{
 hr{
 
 	height: 3px;
-	background: linear-gradient(to left, #0f0c29, #302b63, #24243e);
+/*	background: linear-gradient(to left, #0f0c29, #302b63, #24243e);  */
+background: linear-gradient(to right, #ec008c, #fc6767);
 
 	margin-top:2%;
 	width: 40%;
 }
+
+
