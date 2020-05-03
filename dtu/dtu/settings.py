@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'social',
     'crispy_forms',    
     'registration',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -105,6 +106,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
 
 ACCOUNT_ACTIVATION_DAYS=3
 
@@ -112,7 +115,7 @@ EMAIL_HOST= 'smtp.gmail.com'
 EMAIL_HOST_USER= 'pranav101sharma@gmail.com'
 EMAIL_HOST_PASSWORD= 'pranav101'
 EMAIL_PORT= 587
-EMAIL_USE_TLS= True
+EMAIL_USE_TLS= True  
 
 LOGIN_REDIRECT_URL = "/"
 

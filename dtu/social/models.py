@@ -27,13 +27,15 @@ class MyPost(models.Model):
 
 
 class PostComment(models.Model):
-    post = models.ForeignKey(to=MyPost, on_delete=CASCADE)
+    post = models.ForeignKey(MyPost,related_name='postcomments', on_delete=CASCADE)
     msg = models.TextField()
     commented_by = models.ForeignKey(to=MyProfile, on_delete=CASCADE)
     cr_date = models.DateTimeField(auto_now_add=True)
     flag = models.CharField(max_length=20, null=True, blank=True, choices=(("racist","racist"), ("abbusing","abbusing")))
+
     def __str__(self):
-        return "%s" % self.msg
+        return self.msg
+
 
 
 class PostLike(models.Model):

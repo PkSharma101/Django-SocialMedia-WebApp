@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="p-5">
+<h1 class="myhead2">Comments</h1>
+<hr>
+<br>
+
+<br>
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+           
+            <th>Comment</th>
+            <th>Uploaded by</th>
+            <th>Created</th>
+            
+        </tr>
+    </thead>
+    
+{% for comment in comments %}
+
+        <tr>
+          
+            <td>{{comment.msg }}</td>
+            <td>{{comment.commented_by}}</td>
+            <td>{{comment.cr_date}}</td>
+
+           
+        </tr>
+{% endfor %}
+</table>  
+
+<a href="/social/home" class="btn btn-dark">Back</a>
+
+</div>
+
+
+
+
+    
+
+
+{% endblock %}
+

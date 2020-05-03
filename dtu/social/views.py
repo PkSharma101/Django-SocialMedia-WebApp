@@ -1,8 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect , get_object_or_404 , get_list_or_404
 from django.views.generic.base import TemplateView
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.views.generic.list import ListView
+from rest_framework import generics
+from rest_framework import serializers
 from social.models import FollowUser, MyPost, MyProfile, PostComment, PostLike
 from django.views.generic.detail import DetailView
 from django.db.models import Q
@@ -106,6 +108,36 @@ class MyProfileListView(ListView):
 @method_decorator(login_required, name="dispatch")    
 class MyProfileDetailView(DetailView):
     model = MyProfile
+
+
+
+class PostCommentCreate(CreateView):
+    model = PostComment
+   
+    fields =  ['msg']
+
+    def form_valid(self, form, **kwargs):
+        form.instance.commented_by = self.request.user.myprofile
+        form.instance.post= get_object_or_404(MyPost, pk = self.kwargs['post_id'])
+        
+        self.object = form.save()
+        self.object.save()
+        return HttpResponseRedirect(self.get_success_url())
+
+
+
+
+def showcomments(request, post_id):
+    post = MyPost.objects.get(pk= post_id)
+    return render(request, 'social/postcomment_list.html', {'post': post, 'comments': PostComment.objects.filter(post_id=post_id)})
+
+
+
+
+    
+
+
+   
 
  
 
