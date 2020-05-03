@@ -7,17 +7,17 @@
 <main class="p-5">
 <div class="row text-justify">
 	<div class="col">
-	<h1 class="myhead2" >Login</h1>
+	<h1 class="myhead2" >LOGIN</h1>
 	<hr>
 	</div>
 </div>
 <div class="fancybox">
 	<form enctype="multipart/form-data" method="post">
 		{% csrf_token %}
-		{{form | crispy}}<br>
-		<input class="btn btn-primary" type="submit" />
-		<a class="btn btn-success" href="/accounts/register/">Register</a>
-		<a class="btn btn-danger" href="/accounts/password/reset/">Reset Password</a>
+		{{form | crispy}}<br><br>
+		<input class="btn btn1" type="submit" /> &nbsp;
+		<a class="btn btn1" href="/accounts/register/">Register</a> &nbsp;
+		<a class="btn btn1" href="/accounts/password/reset/">Reset Password</a>
 		</form>
 </div>
 

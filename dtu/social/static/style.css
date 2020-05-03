@@ -57,7 +57,7 @@ body{
     /*	background: linear-gradient(to left, #0f0c29, #302b63, #24243e);
  */
 	background: linear-gradient(to right, #ec008c, #fc6767);
-
+    height: 100px;
 	font-size: 20px;   
 	color: white;
 
@@ -92,17 +92,32 @@ body{
 	color: white;
 	margin: 0 auto;
    position: relative;
-	border: transparent;
-	border-radius: 5%;
+  
+	  border: 6px solid white;
+	  border-radius: 10%;
 	text-align: center;
 
 	width: 30%;
 	height: auto;
 	margin-top: 5%;
-	padding: 20px 20px;
+	padding: 30px 30px;
 /*	background: linear-gradient(to left, #0f0c29, #302b63, #24243e);  */
-	background: linear-gradient(to right, #ec008c, #fc6767);
+	background-color: black;
 
+}
+
+.fancybox:after{
+	content: '';
+  position: absolute;
+  top: -13px;
+  left: -13px;
+  right: -13px;
+  bottom: -13px;
+  border-radius: 10%;
+  background:linear-gradient(to right, #ec008c, #fc6767); 
+   
+  
+  z-index: -1;
 }
 
 
@@ -112,7 +127,9 @@ body{
 
    position: relative;
    margin: 0 auto;
-	border: transparent;
+	border: 5px solid;
+	border-image-source:linear-gradient(to right, #ec008c, #fc6767); 
+	
 	border-radius: 5%;
 	text-align: left;
 	width: 50%;
@@ -148,20 +165,31 @@ body{
 }
 
 .btn{
+	color: white;
  border-radius: 20px;
    padding: 10px 20px;
-   background-color: black;
+   background: rgba(255,255,255,0.5);
+  
    border: none;
+   transition: 0.3s;
+}
+
+.btn1:hover {
+	color: white;
+	background: linear-gradient(to right, #ec008c, #fc6767);
+	
 }
 
 hr{
+	
 
 	height: 3px;
 /*	background: linear-gradient(to left, #0f0c29, #302b63, #24243e);  */
-background: linear-gradient(to right, #ec008c, #fc6767);
+background: linear-gradient(to right,#FFFFFF, #ec008c, #fc6767, #FFFFFF);
 
 	margin-top:2%;
 	width: 40%;
 }
+
 
 
