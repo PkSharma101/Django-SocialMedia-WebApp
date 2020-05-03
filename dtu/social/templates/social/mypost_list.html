@@ -14,6 +14,7 @@
     <thead class="thead-dark">
         <tr>
             <th>Caption</th>
+            <th>Post</th>
             <th>Date</th>
             <th>Action</th>
         </tr>
@@ -21,7 +22,11 @@
 {% for n1 in mypost_list %}
         <tr>
             <td>{{n1.subject}}</td>
+            <td>
+                <img  class="img-fluid rounded-circle" src="/media/{{n1.pic}}" style="width: 50px; height:50px;"/>
+            </td>
             <td>{{n1.cr_date | date:"d/m/y"}}</td>
+           
             <td>
             <a class="btn btn-dark btn-sm" href='/social/mypost/{{n1.id}}'>Read More</a>
             <a class="btn btn-danger btn-sm" href='/social/mypost/delete/{{n1.id}}'><span class="fa fa-trash"></span></a>
