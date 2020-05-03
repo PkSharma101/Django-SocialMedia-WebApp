@@ -14,10 +14,11 @@
 <div class="fancybox">
 	<form enctype="multipart/form-data" method="post">
 		{% csrf_token %}
-		{{form | crispy}}<br><br>
+		{{form | crispy}}<br>
 		<input class="bt bt1" type="submit" /> &nbsp;
-		<a class="bt bt1" href="/accounts/register/">Register</a> &nbsp;
-		<a class="bt bt1" href="/accounts/password/reset/">Reset Password</a>
+		<br><br>
+		<a class="btn" href="/accounts/register/" >Register</a> &nbsp;
+		<a class="btn" href="/accounts/password/reset/">Reset Password</a>
 		</form>
 </div>
 
