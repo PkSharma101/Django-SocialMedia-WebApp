@@ -120,6 +120,38 @@ body{
   z-index: -1;
 }
 
+.fancybox0{
+	color: white;
+	margin: 0 auto;
+   position: relative;
+  
+	  border: 6px solid white;
+	  border-radius: 0%;
+	text-align: justify;
+
+	width: 80%;
+	height: auto;
+	margin-top: 5%;
+	padding: 30px 100px;
+/*	background: linear-gradient(to left, #0f0c29, #302b63, #24243e);  */
+	background-color:  #2E2B2B;
+
+}
+
+.fancybox0:after{
+	content: '';
+  position: absolute;
+  top: -13px;
+  left: -13px;
+  right: -13px;
+  bottom: -13px;
+  border-radius: 0%;
+  background:linear-gradient(to right, #ec008c, #fc6767); 
+   
+  
+  z-index: -1;
+}
+
 
 
 .fancybox1{
