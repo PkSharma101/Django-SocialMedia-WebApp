@@ -56,10 +56,13 @@ body{
 
     /*	background: linear-gradient(to left, #0f0c29, #302b63, #24243e);
  */
-	background: linear-gradient(to right, #ec008c, #fc6767);
+ /*	background: linear-gradient(to right, #ec008c, #fc6767); */
+    background-color: black;
     height: 100px;
 	font-size: 20px;   
 	color: white;
+	
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 	font-family: 'Roboto Slab', sans-serif;
 	font-weight: bolder;
@@ -67,6 +70,9 @@ body{
 .navbar-light .navbar-nav .nav-link{
 	color: white;
 }
+
+
+
 @media(max-width: 766px){
 	.navbar-nav{
 		background-color: #feecde;
@@ -114,7 +120,7 @@ body{
   right: -13px;
   bottom: -13px;
   border-radius: 10%;
-  background:linear-gradient(to right, #ec008c, #fc6767); 
+  background: linear-gradient(to right, #11998e, #38ef7d);
    
   
   z-index: -1;
@@ -146,7 +152,7 @@ body{
   right: -13px;
   bottom: -13px;
   border-radius: 0%;
-  background:linear-gradient(to right, #ec008c, #fc6767); 
+  background: linear-gradient(to right, #11998e, #38ef7d);
    
   
   z-index: -1;
@@ -207,7 +213,7 @@ body{
 
 .bt1:hover {
 	color: white;
-	background: linear-gradient(to right, #ec008c, #fc6767);
+	background: linear-gradient(to right, #11998e, #38ef7d);
 	
 }
 
@@ -223,7 +229,7 @@ body{
 
 .btn:hover{
 	color: white;
-	background: linear-gradient(to right, #ec008c, #fc6767);
+	background: linear-gradient(to right, #11998e, #38ef7d);
 }
 
 hr{
@@ -231,7 +237,7 @@ hr{
 
 	height: 3px;
 /*	background: linear-gradient(to left, #0f0c29, #302b63, #24243e);  */
-background: linear-gradient(to right,#FFFFFF, #ec008c, #fc6767, #FFFFFF);
+background: linear-gradient(to right, transparent,#11998e, #38ef7d, transparent);
 
 	margin-top:2%;
 	width: 40%;
@@ -266,6 +272,7 @@ table:hover{
 	background-color: rgba(0,0,0,0.7);
 	transition: 0.2s;
 }
+
 
 
 

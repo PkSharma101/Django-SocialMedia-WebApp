@@ -17,8 +17,9 @@
 <header id="myheader1">
 	
 	<div id="headfix">
-<nav class="navbar navbar-expand-md navbar-light bg-transparent">
-    <a class="navbar-brand" href="#" style="color: white;"><span class="fa fa-users " style="color: black;"></span> Soc Dist</a>
+<nav class="navbar navbar-expand-md navbar-light fixed-top" >
+    
+    <a class="navbar-brand" href="#" style="background:linear-gradient(to right, #11998e, #38ef7d); background-clip: border-box;-webkit-background-clip: text; -webkit-text-fill-color: transparent;"><span class="fa fa-users  " style="color: white;"></span>  Soc Dist</a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -26,37 +27,40 @@
     <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" style="color: white;" href="/social/home" >HOME </a>
+                <a class="nav-link" href="/social/home" style="color: white;" >HOME </a>
             </li>
           
            
             {% if user.is_authenticated %}
             
             <li class="nav-item">
-                <a class="nav-link " href="/social/mypost">My Posts</a>
+                <a class="nav-link " href="/social/mypost" style="color: white;">My Posts</a>
             </li>            
             <li class="nav-item">
-                <a class="nav-link" href="/social/myprofile">Profiles</a>
+                <a class="nav-link" href="/social/myprofile" style="color: white;">Profiles</a>
             </li>            
             <li class="nav-item">
-                <a class="nav-link" href="/accounts/logout">Logout</a>
+                <a class="nav-link" href="/accounts/logout" style="color: white;">Logout</a>
             </li>
            
             {% else %}
             <li class="nav-item">
-                <a class="nav-link" href="/accounts/login">LOGIN</a>
+                <a class="nav-link" href="/accounts/login" style="color: white;">LOGIN</a>
             </li>
             
             {% endif %}
 
 			{% if user.is_superuser %}
             <li class="nav-item">
-                <a class="nav-link" href="/admin">Admin</a>
+                <a class="nav-link" href="/admin" style="color: white;">Admin</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/social/profile/edit/{{ user.myprofile.id }}" style="color: white;">Edit Profile</a>
+                </li>
 			{% else %}
 				{% if user.is_authenticated %}
 				            <li class="nav-item">
-                			<a class="nav-link" href="/social/profile/edit/{{ user.myprofile.id }}">Edit Profile</a>
+                			<a class="nav-link" href="/social/profile/edit/{{ user.myprofile.id }}" style="color: white;">Edit Profile</a>
             				</li>
 				{% endif %}
 			{% endif %}

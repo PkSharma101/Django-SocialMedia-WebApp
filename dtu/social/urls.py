@@ -23,7 +23,7 @@ urlpatterns = [
 
 
     path('myprofile/', views.MyProfileListView.as_view()),
-    path('myprofile/<int:pk>', views.MyProfileDetailView.as_view()),
+    path('myprofile/<int:pk>', views.profview, name='myprofile-detail'),
     path('myprofile/follow/<int:pk>', views.follow),
     path('myprofile/unfollow/<int:pk>', views.unfollow),
     

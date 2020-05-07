@@ -16,9 +16,9 @@ admin.site.register(MyPost, MyPostAdmin)
 
 
 class MyProfileAdmin(ModelAdmin):
-    list_display = ["name"]
-    search_fields = ["name", "status", "phone_no"]
-    list_filter = ["status", "gender"]
+    list_display = ["fname","lname"]
+    search_fields = ["name", "acc_type", "phone_no"]
+    list_filter = ["acc_type", "gender"]
 admin.site.register(MyProfile, MyProfileAdmin)
 
 

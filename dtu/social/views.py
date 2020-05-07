@@ -10,6 +10,9 @@ from django.views.generic.detail import DetailView
 from django.db.models import Q
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.http.response import HttpResponseRedirect
+from django.db import connection
+
+cursor = connection.cursor()
 
 # Create your views here.
 @method_decorator(login_required, name="dispatch")    
@@ -32,6 +35,8 @@ class HomeView(TemplateView):
             p1.likedno = obList.count()
         context["mypost_list"] = postList
         return context
+
+    
 
 
 
@@ -60,7 +65,7 @@ def unlike(req, pk):
 @method_decorator(login_required, name="dispatch")    
 class MyProfileUpdateView(UpdateView):
     model = MyProfile
-    fields = ["name", "age", "address", "status", "gender", "phone_no", "pic"]
+    fields = ["name", "fname","lname","bio","acc_type","branch","societies", "age", "address", "bio", "gender", "phone_no", "pic"]
 
 @method_decorator(login_required, name="dispatch")    
 class MyPostCreate(CreateView):
@@ -97,17 +102,17 @@ class MyProfileListView(ListView):
         si = self.request.GET.get("si")
         if si == None:
             si = ""
-        profList = MyProfile.objects.filter(Q(name__icontains = si) | Q(address__icontains = si) | Q(gender__icontains = si) | Q(status__icontains = si)).order_by("-id")
+        profList = MyProfile.objects.filter(~Q(user=self.request.user)).order_by("-id")
         for p1 in profList:
             p1.followed = False
-            ob = FollowUser.objects.filter(profile = p1,followed_by=self.request.user.myprofile)
+            ob = FollowUser.objects.filter(profile = p1,followed_by=self.request.user.myprofile) 
             if ob:
                 p1.followed = True
         return profList
 
 @method_decorator(login_required, name="dispatch")    
 class MyProfileDetailView(DetailView):
-    model = MyProfile
+    model = MyProfile 
 
 
 
@@ -128,8 +133,14 @@ class PostCommentCreate(CreateView):
 
 
 def showcomments(request, post_id):
-    post = MyPost.objects.get(pk= post_id)
-    return render(request, 'social/postcomment_list.html', {'post': post, 'comments': PostComment.objects.filter(post_id=post_id)})
+    post = MyPost.objects.raw("select * from social_mypost where pk = %s", [post_id])
+    return render(request, 'social/postcomment_list.html', {'post': post, 'comments': PostComment.objects.raw("select * from social_postcomment where post_id = %s", [post_id])})
+
+
+def profview(request, pk):
+    post= get_list_or_404(MyPost,uploaded_by_id = pk)
+    myprofile = MyProfile.objects.get(pk = pk)
+    return render(request, 'social/myprofile_detail.html', {'post': post , 'myprofile' : myprofile })
 
 
 
