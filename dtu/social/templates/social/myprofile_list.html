@@ -16,14 +16,12 @@
 
 {% regroup object_list by acc_type as acc_list %}
 
-
+  
     {% for acc_type in acc_list %}
-     {% if acc_type.grouper == "student" %}
-     <h1> STUDENTS</h1>
-
-     {% else %}
-     <h2> PAGES </h2>
-
+    {% if profList.name == "pulkit" %}
+    <h1>ADMIN</h1>
+    {% else %}
+     <h1> {{ acc_type.grouper}}s</h1> 
      {% endif %}
         <table class="table table-hover">
             <thead class="thead-dark">
