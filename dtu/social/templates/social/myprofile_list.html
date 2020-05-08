@@ -16,9 +16,15 @@
 
 {% regroup object_list by acc_type as acc_list %}
 
-<ul>
+
     {% for acc_type in acc_list %}
-    <li> {{ acc_type.grouper}} 
+     {% if acc_type.grouper == "student" %}
+     <h1> STUDENTS</h1>
+
+     {% else %}
+     <h2> PAGES </h2>
+
+     {% endif %}
         <table class="table table-hover">
             <thead class="thead-dark">
                 <tr>
@@ -56,9 +62,11 @@
 
 
         </table>
-      </ul>
+     
 
-    </li>
+    
+
+
 
     {% endfor %}
 

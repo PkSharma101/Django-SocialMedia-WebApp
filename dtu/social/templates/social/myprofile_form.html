@@ -7,11 +7,15 @@
 	<div class="col-sm-6 offset-sm-3">
 	<h1 class="myhead2">Profile Update</h1>
 		<hr>
-		<form enctype="multipart/form-data" method="post">
-		{% csrf_token %}
-		{{form | crispy}}
-		<input class="btn btn-dark my-3" type="submit" />
-		</form>
+		<div class="fancybox2">
+			<form enctype="multipart/form-data" method="post">
+				{% csrf_token %}
+				{{form | crispy}}
+				<input class="btn btn-dark my-3" type="submit" />
+				</form>
+
+		</div>
+		
 	
 	</div>
 </div>

@@ -1,39 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="p-5">
-<h1 class="myhead2">Comments</h1>
+<h1 class="myhead2">{{post.subject}}</h1>
+<div class="row justify-content-center">
+    <img class="img-fluid" src="/media/{{post.pic}}"  style="margin: 0 auto; width: 300px; height: 300px ; border: 5px solid black;"/>
+
+</div>
+
 <hr>
 <br>
 
-<br>
-<table class="table table-hover">
-    <thead class="thead-dark">
-        <tr>
-           
-            <th>Comment</th>
-            <th>Uploaded by</th>
-            <th>Created</th>
-            
-        </tr>
-    </thead>
-    
+
+
 {% for comment in comments %}
+<div class= "fancybox2" style="width: 50%; border-radius: 0px;">
+    {{comment.msg}}
+    <br>
+    <span class="badge badge-success">{{comment.commented_by}}</span> &nbsp; 
+    <span class="badge badge-dark">{{comment.cr_date}}</span>
 
-        <tr>
-          
-            <td>{{comment.msg }}</td>
-            <td>{{comment.commented_by}}</td>
-            <td>{{comment.cr_date}}</td>
 
-           
-        </tr>
+</div>
+
 {% endfor %}
-</table>  
+
 
 <a href="/social/home" class="btn btn-dark">Back</a>
 
 </div>
-
 
 
 
