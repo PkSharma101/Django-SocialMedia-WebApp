@@ -1,4 +1,4 @@
- from django.shortcuts import render, redirect , get_object_or_404 , get_list_or_404
+from django.shortcuts import render, redirect , get_object_or_404 , get_list_or_404
 from django.views.generic.base import TemplateView
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
