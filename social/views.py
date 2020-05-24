@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect , get_object_or_404 , get_list_or_404
+ from django.shortcuts import render, redirect , get_object_or_404 , get_list_or_404
 from django.views.generic.base import TemplateView
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
@@ -103,9 +103,13 @@ class MyProfileListView(ListView):
         profList = MyProfile.objects.filter((Q(name__icontains = si) | Q(address__icontains = si) | Q(gender__icontains = si)) & ~Q(user=self.request.user)).order_by("-id")
         for p1 in profList:
             p1.followed = False
-            ob = FollowUser.objects.filter(profile = p1,followed_by=self.request.user.myprofile) 
+            ob = FollowUser.objects.filter(profile = p1,followed_by=self.request.user.myprofile)
+            ob1 = FollowUser.objects.filter(followed_by = p1) 
             if ob:
                 p1.followed = True
+                
+            p1.followno = ob.count()
+            p1.followingno = ob1.count()
         return profList
 
 @method_decorator(login_required, name="dispatch")    
